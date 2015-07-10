@@ -427,8 +427,10 @@
 
 			// callback trigger
 			this.options.onBeforeChange( this.current );
+			var ua = window.navigator.userAgent;
+            		var msie = ua.indexOf("MSIE ");
 
-			if( !this.support ) {
+			if( msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./) ) {
 				
 				this._fade( dir );
 
